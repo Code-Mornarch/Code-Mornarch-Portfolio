@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Monarch - Black Hat Portfolio</title>
+  <link rel="stylesheet" href="./assest/css/styles.css">
+  <style>
+    /* Inline styles for quick testing */
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+  </style>
+</head>
+<body>
+  <!-- Chaos Background -->
+  <div id="chaos-background" class="hidden"></div>
+
+  <!-- Particle Effects -->
+  <div id="particles-js"></div>
+
+  <!-- Navbar -->
+  <nav class="glass nav">
+    <div class="logo">CODE MONARCH</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <pre class="ascii-art">
+      _______  _______  _        _______           _______  _______  _______ 
+     (  ____ \(  ___  )( \      (  ____ \|\     /|(  ____ \(  ___  )(  ____ \
+     | (    \/| (   ) || (      | (    \/| )   ( || (    \/| (   ) || (    \/
+     | |      | (___) || |      | (__    | (___) || (__    | |   | || (_____ 
+     | |      |  ___  || |      |  __)   |  ___  ||  __)   | |   | |(_____  )
+     | |      | (   ) || |      | (      | (   ) || (      | |   | |      ) |
+     | (____/\| )   ( || (____/\| (____/\| )   ( || (____/\| (___) |/\____) |
+     (_______/|/     \|(_______/(_______/|/     \|(_______/(_______)\_______)
+    </pre>
+    <h1 class="typewriter">Welcome to My Shadowy Realm</h1>
+    <p>I am KARUGA Calvin, alias CODE MONARCH.</p>
+    <button id="enter-button" class="btn pulse-button btn-3d">Press Enter</button>
+  </section>
+
+  <!-- Parallax Effect -->
+  <section class="parallax"></section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2>My Arsenal</h2>
+    <div class="project-grid">
+      <!-- Project 1: Custom RAT -->
+      <div class="project-card glass">
+        <img src="./assest/img/rat.jpg" alt="Custom RAT">
+        <h3>Custom Remote Access Trojan (RAT)</h3>
+        <p>A stealthy tool for remote system control.</p>
+        <p>Tech Stack: Python, C++</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Mornarch/custom-rat" class="btn">View Code</a> -->
+      </div>
+
+      <!-- Project 2: Advanced Keylogger -->
+      <div class="project-card glass">
+        <img src="./assest/img/keylogger.jpg" alt="Keylogger">
+        <h3>Advanced Keylogger</h3>
+        <p>Captures every keystroke with precision.</p>
+        <p>Tech Stack: Python, C</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Mornarch/keylogger" class="btn">View Code</a> -->
+      </div>
+
+      <!-- Project 3: Exploit Framework -->
+      <div class="project-card glass">
+        <img src="./assest/img/exploit-framework.jpg" alt="Exploit Framework">
+        <h3>Custom Exploit Framework</h3>
+        <p>Automates the exploitation process.</p>
+        <p>Tech Stack: Python, Metasploit</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Mornarch/exploit-framework" class="btn">View Code</a> -->
+      </div>
+
+      <!-- Project 4: Phishing Toolkit -->
+      <div class="project-card glass">
+        <img src="./assest/img/phishing-toolkit.jpg" alt="Phishing Toolkit">
+        <h3>Phishing Toolkit</h3>
+        <p>Create convincing phishing pages effortlessly.</p>
+        <p>Tech Stack: HTML, CSS, Flask</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Mornarch/phishing-toolkit" class="btn">View Code</a> -->
+      </div>
+
+      <!-- Project 5: Payload Generator -->
+      <div class="project-card glass">
+        <img src="./assest/img/payload-generator.jpg" alt="Payload Generator">
+        <h3>Payload Generator</h3>
+        <p>Generate custom payloads for various targets.</p>
+        <p>Tech Stack: Python, Bash</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Mornarch/payload-generator" class="btn">View Code</a> -->
+      </div>
+
+      <!-- Project 6: Network Scanner -->
+      <div class="project-card glass">
+        <img src="./assest/img/network-scanner.jpg" alt="Network Scanner">
+        <h3>Network Scanner</h3>
+        <p>Scan networks for vulnerabilities and open ports.</p>
+        <p>Tech Stack: Python, Scapy</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Mornarch/network-scanner" class="btn">View Code</a> -->
+      </div>
+
+      <!-- Project 7: Credential Harvester -->
+      <div class="project-card glass">
+        <img src="./assest/img/credential-harvester.jpg" alt="Credential Harvester">
+        <h3>Credential Harvester</h3>
+        <p>Steal credentials from unsuspecting victims.</p>
+        <p>Tech Stack: Python, PHP</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Mornarch/credential-harvester" class="btn">View Code</a> -->
+      </div>
+
+      <!-- Project 8: Social Engineering Toolkit -->
+      <div class="project-card glass">
+        <img src="./assest/img/social-engineering-toolkit.jpg" alt="Social Engineering Toolkit">
+        <h3>Social Engineering Toolkit</h3>
+        <p>Automate social engineering attacks.</p>
+        <p>Tech Stack: Python, Flask</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Mornarch/social-engineering-toolkit" class="btn">View Code</a> -->
+      </div>
+
+      <!-- Project 9: DDoS Tool -->
+      <div class="project-card glass">
+        <img src="./assest/img/ddos-tool.jpg" alt="DDoS Tool">
+        <h3>DDoS Tool</h3>
+        <p>Overwhelm target servers with traffic.</p>
+        <p>Tech Stack: Python, Sockets</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+      </div>
+
+      <!-- Project 10: Reverse Shell -->
+      <div class="project-card glass">
+        <img src="./assest/img/reverse-shell.jpg" alt="Reverse Shell">
+        <h3>Reverse Shell</h3>
+        <p>Gain remote access to compromised systems.</p>
+        <p>Tech Stack: Python, Netcat</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I am KARUGA Calvin, alias CODE MONARCH, a master of the shadows in the digital realm...</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: calvinkaruga@gmail.com</p>
+    <p>Phone: +254746841767</p>
+    <p>GitHub: <a href="https://github.com/Code-Mornarch">Code-Mornarch</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="glass footer">
+    <p>&copy; 2023 CODE MONARCH. All rights reserved.</p>
+  </footer>
+
+  <!-- Chaos Script -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+        // Check if the correct access key is present in the URL
+    const params = new URLSearchParams(window.location.search);
+    if (!params.has('access') || params.get('access') !== 'monarch') {
+      // Redirect to your custom 404 page
+      window.location.href = "404.html";
+    }
+  
+// Chaos Background
+    const chaosBackground = document.getElementById('chaos-background');
+
+    // Enter Button
+    const enterButton = document.getElementById('enter-button');
+    enterButton.addEventListener('click', () => {
+      // Play sound effect
+      const beepSound = new Audio('system-beep.mp3'); // Replace with your sound file
+      beepSound.play();
+
+      // Trigger chaos
+      chaosBackground.classList.remove('hidden');
+      chaosBackground.innerHTML = ''; // Clear previous content
+
+      // Generate Matrix-style code rain
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()';
+      const fontSize = 15;
+      const columns = Math.floor(window.innerWidth / fontSize);
+
+      const drops = [];
+      for (let i = 0; i < columns; i++) {
+        drops[i] = 1;
+      }
+
+      function drawMatrix() {
+        chaosBackground.innerHTML = '';
+        for (let i = 0; i < drops.length; i++) {
+          const text = document.createElement('span');
+          const char = chars[Math.floor(Math.random() * chars.length)];
+          text.textContent = char;
+          text.style.color = `hsl(${Math.random() * 120}, 100%, 50%)`;
+          text.style.fontSize = `${fontSize}px`;
+          text.style.position = 'absolute';
+          text.style.top = `${drops[i] * fontSize}px`;
+          text.style.left = `${i * fontSize}px`;
+          chaosBackground.appendChild(text);
+
+          if (drops[i] * fontSize > window.innerHeight || Math.random() > 0.95) {
+            drops[i] = 0;
+          }
+          drops[i]++;
+        }
+      }
+
+      setInterval(drawMatrix, 50);
+
+      // Change layout colors
+      document.body.style.backgroundColor = '#0000ff'; // Deep blue background
+      document.querySelectorAll('.glass').forEach(el => {
+        el.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+      });
+
+      // Blur sections
+      document.querySelectorAll('section').forEach(section => {
+        section.style.filter = 'blur(2px)';
+      });
+    });
+
+    // Particle.js Configuration
+    particlesJS('particles-js', {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#0000ff" }, // Deep blue
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": false, "anim": { "enable": false } },
+        "size": { "value": 3, "random": true },
+        "move": {
+          "enable": true,
+          "speed": 1,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": { "enable": false }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

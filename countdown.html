@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Countdown - CODE MONARCH</title>
+    <style>
+                * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Fira Code', monospace;
+        }
+        body {
+            background: #0a0a1a; /* Dark blue background */
+            color: #00bfff; /* Light blue text */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .glow {
+            text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff; /* Blue glow effect */
+        }
+        .countdown-container {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 30, 0.8); /* Dark blue container */
+            border: 2px solid #00bfff;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+            width: 90%;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+        .countdown {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .time-box {
+            background: rgba(0, 0, 50, 0.9); /* Dark blue time boxes */
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #00bfff;
+            min-width: 80px;
+            flex: 1 1 calc(25% - 1rem);
+        }
+        .number {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .label {
+            font-size: 0.8rem;
+            color: #80dfff; /* Lighter blue for labels */
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
+        .motd {
+            margin-top: 2rem;
+            font-size: 1rem;
+            color: #80dfff; /* Lighter blue for message */
+        }
+        /* Matrix-like rain effect */
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .number {
+                font-size: 1.5rem;
+            }
+            .label {
+                font-size: 0.7rem;
+            }
+            .time-box {
+                min-width: 60px;
+                flex: 1 1 calc(50% - 1rem);
+            }
+            .motd {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            .number {
+                font-size: 1.2rem;
+            }
+            .label {
+                font-size: 0.6rem;
+            }
+            .time-box {
+                min-width: 50px;
+                flex: 1 1 100%;
+            }
+            .motd {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas class="matrix-rain" id="matrix"></canvas>
+    
+    <div class="countdown-container">
+        <h1 class="glow">Project Completion Countdown</h1>
+        
+        <div class="countdown">
+            <div class="time-box">
+                <div class="number" id="days">00</div>
+                <div class="label">Days</div>
+            </div>
+            <div class="time-box">
+                <div class="number" id="hours">00</div>
+                <div class="label">Hours</div>
+            </div>
+            <div class="time-box">
+                <div class="number" id="minutes">00</div>
+                <div class="label">Minutes</div>
+            </div>
+            <div class="time-box">
+                <div class="number" id="seconds">00</div>
+                <div class="label">Seconds</div>
+            </div>
+        </div>
+        <p class="motd">All 10 projects will be operational by 00:00:00 UTC April 1st</p>
+    </div>
+    <script>
+        // Set the target date (March 31st 23:59:59 UTC)
+        const targetDate = new Date('2025-03-31T23:59:59Z');
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            if (distance < 0) {
+                document.getElementById('days').innerHTML = '00';
+                document.getElementById('hours').innerHTML = '00';
+                document.getElementById('minutes').innerHTML = '00';
+                document.getElementById('seconds').innerHTML = '00';
+                document.querySelector('.motd').innerHTML = "All systems operational! Projects deployed!";
+                return;
+            }
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+        }
+        // Update every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+        // Matrix rain effect
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+        const drops = Array(Math.floor(canvas.width / 20)).fill(0);
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(0, 0, 30, 0.05)'; /* Dark blue background for matrix */
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#00bfff'; /* Light blue text for matrix */
+            ctx.font = '15px monospace';
+            drops.forEach((drop, i) => {
+                const char = chars[Math.floor(Math.random() * chars.length)];
+                ctx.fillText(char, i * 20, drop * 20);
+                
+                if (drop * 20 > canvas.height || Math.random() > 0.95) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            });
+        }
+        setInterval(drawMatrix, 100);
+    </script>
+</body>
+</html>
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Countdown - CODE MONARCH</title>
+    <style>
+                * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Fira Code', monospace;
+        }
+        body {
+            background: #0a0a1a; /* Dark blue background */
+            color: #00bfff; /* Light blue text */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .glow {
+            text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff; /* Blue glow effect */
+        }
+        .countdown-container {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 0, 30, 0.8); /* Dark blue container */
+            border: 2px solid #00bfff;
+            border-radius: 16px;
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+            width: 90%;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+        }
+        .countdown {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .time-box {
+            background: rgba(0, 0, 50, 0.9); /* Dark blue time boxes */
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #00bfff;
+            min-width: 80px;
+            flex: 1 1 calc(25% - 1rem);
+        }
+        .number {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .label {
+            font-size: 0.8rem;
+            color: #80dfff; /* Lighter blue for labels */
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
+        .motd {
+            margin-top: 2rem;
+            font-size: 1rem;
+            color: #80dfff; /* Lighter blue for message */
+        }
+        /* Matrix-like rain effect */
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .number {
+                font-size: 1.5rem;
+            }
+            .label {
+                font-size: 0.7rem;
+            }
+            .time-box {
+                min-width: 60px;
+                flex: 1 1 calc(50% - 1rem);
+            }
+            .motd {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            .number {
+                font-size: 1.2rem;
+            }
+            .label {
+                font-size: 0.6rem;
+            }
+            .time-box {
+                min-width: 50px;
+                flex: 1 1 100%;
+            }
+            .motd {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas class="matrix-rain" id="matrix"></canvas>
+    
+    <div class="countdown-container">
+        <h1 class="glow">Project Completion Countdown</h1>
+        
+        <div class="countdown">
+            <div class="time-box">
+                <div class="number" id="days">00</div>
+                <div class="label">Days</div>
+            </div>
+            <div class="time-box">
+                <div class="number" id="hours">00</div>
+                <div class="label">Hours</div>
+            </div>
+            <div class="time-box">
+                <div class="number" id="minutes">00</div>
+                <div class="label">Minutes</div>
+            </div>
+            <div class="time-box">
+                <div class="number" id="seconds">00</div>
+                <div class="label">Seconds</div>
+            </div>
+        </div>
+        <p class="motd">All 10 projects will be operational by 00:00:00 UTC April 1st</p>
+    </div>
+    <script>
+        // Set the target date (future date)
+        const targetDate = new Date('2025-04-01T00:00:00Z'); // April 1st, 2024, at 00:00:00 UTC
+
+        function updateCountdown() {
+            const now = new Date().getTime(); // Current timestamp
+            const distance = targetDate - now; // Time difference in milliseconds
+
+            if (distance < 0) {
+                // If the target date has passed, stop the countdown
+                document.getElementById('days').innerHTML = '00';
+                document.getElementById('hours').innerHTML = '00';
+                document.getElementById('minutes').innerHTML = '00';
+                document.getElementById('seconds').innerHTML = '00';
+                document.querySelector('.motd').innerHTML = "All systems operational! Projects deployed!";
+                clearInterval(countdownInterval); // Stop the interval
+                return;
+            }
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Update the countdown elements
+            document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+        }
+
+        // Update every second
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+    </script>
+</body>
+</html> -->

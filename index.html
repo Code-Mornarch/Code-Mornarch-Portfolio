@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Guardian - Ethical Hacking Portfolio</title>
+  <link rel="stylesheet" href="./assest/css/styles.css">
+  <style>
+    /* Inline styles for quick testing */
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
+  </style>
+</head>
+<body>
+  <!-- Chaos Background -->
+  <div id="chaos-background" class="hidden"></div>
+
+  <!-- Particle Effects -->
+  <div id="particles-js"></div>
+
+  <!-- Navbar -->
+  <nav class="glass nav">
+    <div class="logo">CODE GUARDIAN</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <pre class="ascii-art">
+      _______  _______  _        _______           _______  _______  _______ 
+     (  ____ \(  ___  )( \      (  ____ \|\     /|(  ____ \(  ___  )(  ____ \
+     | (    \/| (   ) || (      | (    \/| )   ( || (    \/| (   ) || (    \/
+     | |      | (___) || |      | (__    | (___) || (__    | |   | || (_____ 
+     | |      |  ___  || |      |  __)   |  ___  ||  __)   | |   | |(_____  )
+     | |      | (   ) || |      | (      | (   ) || (      | |   | |      ) |
+     | (____/\| )   ( || (____/\| (____/\| )   ( || (____/\| (___) |/\____) |
+     (_______/|/     \|(_______/(_______/|/     \|(_______/(_______)\_______)
+    </pre>
+    <h1 class="typewriter">Welcome to My Ethical Realm</h1>
+    <p>I am KARUGA Calvin, alias CODE GUARDIAN.</p>
+    <button id="enter-button" class="btn pulse-button btn-3d">Press Enter</button>
+  </section>
+
+  <!-- Parallax Effect -->
+  <section class="parallax"></section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2>My Ethical Arsenal</h2>
+    <div class="project-grid">
+      <!-- Project 1: Vulnerability Scanner -->
+      <div class="project-card glass">
+        <img src="./assest/img/vulnerability-scanner.jpg" alt="Vulnerability Scanner">
+        <h3>Vulnerability Scanner</h3>
+        <p>Identify and patch security vulnerabilities in systems.</p>
+        <p>Tech Stack: Python, Nmap</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Guardian/vulnerability-scanner" class="btn">View Code</a> -->
+      </div>
+
+      <!-- Project 2: Password Strength Tester -->
+      <div class="project-card glass">
+        <img src="./assest/img/password-tester.jpg" alt="Password Strength Tester">
+        <h3>Password Strength Tester</h3>
+        <p>Test and improve password security for users.</p>
+        <p>Tech Stack: Python, Flask</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Guardian/password-tester" class="btn">View Code</a> -->
+      </div>
+
+      <!-- Project 3: Penetration Testing Framework -->
+      <div class="project-card glass">
+        <img src="./assest/img/penetration-framework.jpg" alt="Penetration Testing Framework">
+        <h3>Penetration Testing Framework</h3>
+        <p>Automate ethical hacking and security assessments.</p>
+        <p>Tech Stack: Python, Metasploit</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Guardian/penetration-framework" class="btn">View Code</a> -->
+      </div>
+
+      <!-- Project 4: Phishing Awareness Toolkit -->
+      <div class="project-card glass">
+        <img src="./assest/img/phishing-awareness.jpg" alt="Phishing Awareness Toolkit">
+        <h3>Phishing Awareness Toolkit</h3>
+        <p>Educate users on identifying phishing attempts.</p>
+        <p>Tech Stack: HTML, CSS, Flask</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Guardian/phishing-awareness" class="btn">View Code</a> -->
+      </div>
+
+      <!-- Project 5: Secure Payload Generator -->
+      <div class="project-card glass">
+        <img src="./assest/img/secure-payload.jpg" alt="Secure Payload Generator">
+        <h3>Secure Payload Generator</h3>
+        <p>Generate secure payloads for testing purposes.</p>
+        <p>Tech Stack: Python, Bash</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Guardian/secure-payload" class="btn">View Code</a> -->
+      </div>
+
+      <!-- Project 6: Network Security Scanner -->
+      <div class="project-card glass">
+        <img src="./assest/img/network-security.jpg" alt="Network Security Scanner">
+        <h3>Network Security Scanner</h3>
+        <p>Scan networks for vulnerabilities and secure open ports.</p>
+        <p>Tech Stack: Python, Scapy</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Guardian/network-security" class="btn">View Code</a> -->
+      </div>
+
+      <!-- Project 7: Credential Protection Tool -->
+      <div class="project-card glass">
+        <img src="./assest/img/credential-protection.jpg" alt="Credential Protection Tool">
+        <h3>Credential Protection Tool</h3>
+        <p>Protect and encrypt user credentials securely.</p>
+        <p>Tech Stack: Python, AES Encryption</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Guardian/credential-protection" class="btn">View Code</a> -->
+      </div>
+
+      <!-- Project 8: Social Engineering Defense Toolkit -->
+      <div class="project-card glass">
+        <img src="./assest/img/social-engineering-defense.jpg" alt="Social Engineering Defense Toolkit">
+        <h3>Social Engineering Defense Toolkit</h3>
+        <p>Train users to recognize and resist social engineering attacks.</p>
+        <p>Tech Stack: Python, Flask</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Guardian/social-engineering-defense" class="btn">View Code</a> -->
+      </div>
+
+      <!-- Project 9: DDoS Mitigation Tool -->
+      <div class="project-card glass">
+        <img src="./assest/img/ddos-mitigation.jpg" alt="DDoS Mitigation Tool">
+        <h3>DDoS Mitigation Tool</h3>
+        <p>Detect and mitigate DDoS attacks on servers.</p>
+        <p>Tech Stack: Python, Sockets</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Guardian/ddos-mitigation" class="btn">View Code</a> -->
+      </div>
+
+      <!-- Project 10: Secure Reverse Shell -->
+      <div class="project-card glass">
+        <img src="./assest/img/secure-reverse-shell.jpg" alt="Secure Reverse Shell">
+        <h3>Secure Reverse Shell</h3>
+        <p>Test secure remote access for system administration.</p>
+        <p>Tech Stack: Python, SSH</p>
+        <a href="./countdown.html" class="btn">View Code</a>
+        <!-- <a href="https://github.com/Code-Guardian/secure-reverse-shell" class="btn">View Code</a> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I am KARUGA Calvin, alias CODE GUARDIAN, a cybersecurity professional dedicated to protecting digital systems and educating users on security best practices.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: calvinkaruga@gmail.com</p>
+    <p>Phone: +254746841767</p>
+    <p>GitHub: <a href="https://github.com/Code-Guardian">Code-Guardian</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="glass footer">
+    <p>&copy; 2023 CODE GUARDIAN. All rights reserved.</p>
+  </footer>
+
+  <!-- Chaos Script -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    // Chaos Background
+    const chaosBackground = document.getElementById('chaos-background');
+
+    // Enter Button
+    const enterButton = document.getElementById('enter-button');
+    enterButton.addEventListener('click', () => {
+      // Play sound effect
+      const beepSound = new Audio('system-beep.mp3'); // Replace with your sound file
+      beepSound.play();
+
+      // Trigger chaos
+      chaosBackground.classList.remove('hidden');
+      chaosBackground.innerHTML = ''; // Clear previous content
+
+      // Generate Matrix-style code rain
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()';
+      const fontSize = 15;
+      const columns = Math.floor(window.innerWidth / fontSize);
+
+      const drops = [];
+      for (let i = 0; i < columns; i++) {
+        drops[i] = 1;
+      }
+
+      function drawMatrix() {
+        chaosBackground.innerHTML = '';
+        for (let i = 0; i < drops.length; i++) {
+          const text = document.createElement('span');
+          const char = chars[Math.floor(Math.random() * chars.length)];
+          text.textContent = char;
+          text.style.color = `hsl(${Math.random() * 120}, 100%, 50%)`;
+          text.style.fontSize = `${fontSize}px`;
+          text.style.position = 'absolute';
+          text.style.top = `${drops[i] * fontSize}px`;
+          text.style.left = `${i * fontSize}px`;
+          chaosBackground.appendChild(text);
+
+          if (drops[i] * fontSize > window.innerHeight || Math.random() > 0.95) {
+            drops[i] = 0;
+          }
+          drops[i]++;
+        }
+      }
+
+      setInterval(drawMatrix, 50);
+
+      // Change layout colors
+      document.body.style.backgroundColor = '#0000ff'; // Deep blue background
+      document.querySelectorAll('.glass').forEach(el => {
+        el.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+      });
+
+      // Blur sections
+      document.querySelectorAll('section').forEach(section => {
+        section.style.filter = 'blur(2px)';
+      });
+    });
+
+    // Particle.js Configuration
+    particlesJS('particles-js', {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#0000ff" }, // Deep blue
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": false, "anim": { "enable": false } },
+        "size": { "value": 3, "random": true },
+        "move": {
+          "enable": true,
+          "speed": 1,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": { "enable": false }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
